@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding ="UTF-8"?>
+
+<!-- ***************************************************************************** -->
+<!-- *********************** POINT_TO_POINT_CONTROL.LAUNCH *********************** -->
+<!-- ***********************     Author: Livio Bisogni     *********************** -->
+<!-- *********************** © 2021 Turtley & Turtles Ltd. *********************** -->
+<!-- ***************************************************************************** -->
+
+<launch>
+    <!-- Turtlesim Node -->
+    <node pkg="turtlesim" type="turtlesim_node" name="sim"/>
+
+    <!-- Point to point control -->
+    <node pkg="point_to_point_control" type="point_to_point_control" name="point_to_point_control" output="screen" required="true"/>
+</launch>
