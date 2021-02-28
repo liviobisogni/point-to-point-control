@@ -42,8 +42,16 @@ where:	0 &leq; goalPose\_X, goalPose\_Y  &leq; 11
 3. Once that pose is reached, the turtle stops; it can move towards another desired pose (passed by the user as shown in point 1), and so forth.
 4. Poses out of bounds are properly treated. Various types of information are printed on the terminal. Press `ESC` to exit the program anytime.
 
+## Some _turtlish_ screenshots
+
+* Initial position:
+
 ![](img/p1.png)
 
+* Turtle is moving towards the first pose (decided by the user and passed by a terminal window):
+
 ![](img/p2.png)
+
+* 5-th pose reached:
 
 ![](img/p3.png)
