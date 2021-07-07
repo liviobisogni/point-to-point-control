@@ -156,7 +156,6 @@ double getAngularError(turtlesim::Pose       current_pose,
 
 /*‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
     GETLINEARERROR:     Get linear error from the turtles perspective.
-                        Error only along turtle X axis
 _____________________________________________________________________________*/
 
 double getLinearError(turtlesim::Pose       current_pose,
@@ -167,10 +166,7 @@ double getLinearError(turtlesim::Pose       current_pose,
     double E_y = goal_pose.y - current_pose.y;  // Error along Y component
     double E_theta =
         getAngularError(current_pose, goal_pose);  // get angle between vectors
-
-    // Projection error onto turtle X axis
-    // double E_thetax = hypotf(E_x, E_y) * cos(E_theta); // CANC
-    double E_thetax = hypot(E_x, E_y) * cos(E_theta);
+    double E_thetax = hypot(E_x, E_y);
 
     return E_thetax;
 }
@@ -246,6 +242,8 @@ int main(int argc, char **argv)
 
     // Execute until node and channel are ok, and esc key is not pressed
     while (ros::ok() && nh.ok() && c != KEY_ESC) {
+        ros::spinOnce();
+        
         // When the flag 'stop' is set to false, keep moving the turtle with a
         // proportional controller.
         if (stop == false) {
@@ -293,7 +291,6 @@ int main(int argc, char **argv)
 
         c = getch();  // read character (non-blocking)
 
-        ros::spinOnce();
         loop_rate.sleep();
     }
 
