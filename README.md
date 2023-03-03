@@ -13,28 +13,28 @@ I'll take you where no one's ever turtled before.
 1. Move this folder (`point-to-point-control`) in `~/catkin_ws/src` (or wherever thy ROS workspace is).
 2. Launch a terminal window and navigate to the aforementioned ROS workspace, e.g.,
 
-	```
-	$ cd ~/catkin_ws/
+	```bash
+	cd ~/catkin_ws/
 	```
 3. Build the package:
 
-	```
-	$ catkin_make
+	```bash
+	catkin_make
 	```
 
 ## How to execute
 Open the terminal and type:
 
-```
-$ roslaunch point_to_point_control point_to_point_control.launch
+```bash
+roslaunch point_to_point_control point_to_point_control.launch
 ```
 
 ## How to use
 
 1. A goal pose (goalPose\_X, goalPose\_Y) is passed by terminal thanks to the following command:
 
-	```
-	$ rostopic pub /turtle1/PositionCommand geometry_msgs/Pose2D '{x: goalPose_X, y: goalPose_Y}' -1
+	```bash
+	rostopic pub /turtle1/PositionCommand geometry_msgs/Pose2D '{x: goalPose_X, y: goalPose_Y}' -1
 	```
 where:	0 &leq; goalPose\_X, goalPose\_Y  &leq; 11
 
