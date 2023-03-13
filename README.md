@@ -1,4 +1,4 @@
-# Point-to-point control
+# Point-to-Point Control
 
 A ROS package designed to enable a turtle robot to move from a starting point to a user-defined goal pose using a proportional controller.
 
